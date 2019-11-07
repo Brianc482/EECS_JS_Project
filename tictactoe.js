@@ -74,6 +74,7 @@ function setBoard(){
 	}	
 	
 	if(hasWon(this)){
+		document.getElementById('currentTurn').textContent = 'Current turn: Player ' + 1 + ' is X\'s';
 		if(currentTurn == "X"){
 			this.innerHTML = currentTurn;
 			alert('Player ' + 1 + ' has set the last \'X\' and won the game! Rock Chalk Jayhawk!');
@@ -81,7 +82,7 @@ function setBoard(){
 		else{
 			this.innerHTML = currentTurn;
 			alert('Player ' + 2 + ' has set the last \'O\' and won the game! Rock Chalk Jayhawk!');
-
+			document.getElementById('currentTurn').textContent = 'Current turn: Player ' + 1 + ' is X\'s';
 		}
 		startNewGame();
 	}
