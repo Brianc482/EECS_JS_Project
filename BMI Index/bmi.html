@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="bmi.css">
+<script>
+
+function calculateBMI(){
+	var feet = Number(document.getElementById("feet").value);
+	var inches = Number(document.getElementById("inches").value);
+	var weight = Number(document.getElementById("pounds").value);
+	var height = (feet * 12) + inches;
+	var BMI = (weight /(height*height)) * 703;
+	var rounded = Math.round(BMI * 10) / 10;
+	document.getElementById("Height").innerHTML = feet + "'" + inches + "\"";
+	document.getElementById("Weight").innerHTML = weight;
+	document.getElementById("BMI").innerHTML = rounded;
+
+	if (rounded < 18.5){ 
+		var str = "Underweight";
+		var result = str.link("https://en.wikipedia.org/wiki/Underweight");
+		document.getElementById("comment").innerHTML = result;}
+		if (rounded >= 18.5 && rounded <= 25){
+			var str = "Normal";
+			document.getElementById("comment").innerHTML = str;}
+			if (rounded >= 25 && rounded <= 30){
+				var str = "Overweight";
+				var result = str.link("https://en.wikipedia.org/wiki/Overweight");
+				document.getElementById("comment").innerHTML = result;}
+				if (rounded >= 30){
+					var str = "Obese";
+					var result = str.link("https://en.wikipedia.org/wiki/Obesity");
+					document.getElementById("comment").innerHTML = result;}
+}
+</script>
+</head>
+<body>
+<div id="container">
+	<header>
+		Body Mass Index Calculator
+	</header>
+	<table id="table1">
+	<tr>
+		<th>Your height: </th>
+	</tr>
+	<tr>
+		<td><label>Feet:</label><input id="feet" type="number" required="required"></td>
+	</tr>
+	<tr>
+		<td><label>Inch(es): </label><input id="inches" type="number" required="required"></td>
+	</tr>
+	<tr>
+		<th>Your weight: </th>
+	</tr>
+	<tr>
+		<td><label>Pounds: </label><input id="pounds" type="number" required="required"></td>
+	</tr>
+	<tr>
+		<td><label id="hide">&nbsp;</label><input type="button" value="Calculate" 
+		onclick="calculateBMI()"></td>
+	</tr>
+	</table>
+	<div id="classInfo">
+		EECS 368, University of Kansas, Lawrence Campus
+	</div>
+		<h4>Your Height: <span id="Height">&nbsp;</span></h4>
+		<h4>Your Weight: <span id="Weight">&nbsp;</span></h4>
+		<h4>Your BMI is: <span id="BMI">&nbsp;</span></h4>
+		<h4><span id="comment">&nbsp;</span></h4>
+	<table id="table2">
+		<tr>
+			<td>Underweight</td>
+			<td>>18.5</td>
+		</tr>
+		<tr>
+			<td>Normal weight</td>
+			<td>18.5 - 24.9</td>
+		</tr>
+		<tr>
+			<td>Overweight</td>
+			<td>25 - 29.9</td>
+		</tr>
+		<tr>
+			<td>Obesity</td>
+			<td>30 or greater</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,61 @@
+*{padding: 0; margin: 0;}
+#container, header, table, output, footer{
+}
+#container{
+	max-width: 960px;
+	min-width: 500px;
+	width: 40%;
+	margin: 0 auto;
+	position: relative;
+}
+header{
+	font-size: xx-large;
+	font-weight: bold;
+	margin: 25px 0;
+	text-align: center;
+	background-color: white;
+}
+#table1{
+	border: 2px solid green;
+	width: 100%;
+	height: 300px;
+	padding: 10px 10px;
+	font-weight: bold;
+	background-color: #FFFACD;
+	clear: both;
+}
+#table1 th{
+	text-align: left;
+}
+#table1 label{
+	width: 30%;
+	float: left;
+	margin: 0 15px;
+	text-align: right;
+}
+#table1 input{
+	text-align: left;
+}
+#classInfo{
+	text-align: center;
+	color: #48A3D6;
+}
+h4{
+	text-align: center;
+	margin: 15px 0;
+	font-weight: normal;
+}
+ul{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#table2{
+	margin: 0 auto;
+	background-color: white;
+	text-align: center;
+	border: 1px solid black;
+}
+#table2 tr td{
+	border: 1px solid black;
+}
