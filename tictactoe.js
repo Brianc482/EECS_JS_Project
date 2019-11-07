@@ -67,19 +67,20 @@ function setBoard(){
 	if (this.innerHTML !== empty){
 		return;
 	}
-	this.innerHTML = currentTurn;
-	
-	moves = moves + 1;
-	score[currentTurn] += this.identifier;
+	else{
+		this.innerHTML = currentTurn;
+		moves = moves + 1;
+		score[currentTurn] += this.identifier;
+	}	
 	
 	if(hasWon(this)){
 		if(currentTurn == "X"){
 			this.innerHTML = currentTurn;
-			alert('Player ' + 1 + ' has won the game! Rock Chalk Jayhawk!');
+			alert('Player ' + 1 + ' has set the last \'X\' and won the game! Rock Chalk Jayhawk!');
 		}
 		else{
 			this.innerHTML = currentTurn;
-			alert('Player ' + 2 + ' has won the game! Rock Chalk Jayhawk!');
+			alert('Player ' + 2 + ' has set the last \'O\' and won the game! Rock Chalk Jayhawk!');
 
 		}
 		startNewGame();
@@ -91,10 +92,10 @@ function setBoard(){
 	else{
 		currentTurn = currentTurn === "X" ? "O" : "X";
 		if(currentTurn == "X"){
-			document.getElementById('currentTurn').textContent = 'Current turn: Player ' + 1;
+			document.getElementById('currentTurn').textContent = 'Current turn: Player ' + 1 + ' is X\'s';
 		}
 		else{
-			document.getElementById('currentTurn').textContent = 'Current turn: Player ' + 2;		
+			document.getElementById('currentTurn').textContent = 'Current turn: Player ' + 2 + ' is O\'s';		
 		}
 	}
 }
