@@ -1,16 +1,16 @@
-var boardSize = 3,
-empty = "&nbsp;",
-boxes = [],
-currentTurn = "X",
-score,
-moves;
+var boardSize = 3;
+var empty = "&nbsp;";
+var boxes = [];
+var currentTurn = "X";
+var score = 0;
+var moves = 0;
 
-function run() {
+function run(){
 	var board = document.createElement('table');
 	board.setAttribute("border", 1);
 	board.setAttribute("cellspacing", 0);
 	var identifier = 1;
-	for (var i = 0; i < boardSize; i++) {
+	for(var i = 0; i < boardSize; i++){
 		var row = document.createElement('tr');
 		board.appendChild(row);
 		for (var j = 0; j < boardSize; j++) {
@@ -27,7 +27,7 @@ function run() {
 				cell.classList.add('diagonal1');
 			}
 			cell.identifier = identifier;
-			cell.addEventListener("click", set);
+			cell.addEventListener("click", setBoard);
 			row.appendChild(cell);
 			boxes.push(cell);
 			identifier += identifier;
@@ -37,14 +37,14 @@ function run() {
 	startNewGame();
 }
 
-function startNewGame() {
+function startNewGame(){
 	score = {"X": 0, "O": 0};
 	moves = 0;
 	currentTurn = "X";
 	boxes.forEach(function(square){square.innerHTML = empty;});
 }
 
-function hasWon(clicked) {
+function hasWon(clicked){
 	var memberOf = clicked.className.split(/\s+/);
 	for (var i = 0; i < memberOf.length; i++) {
 		var testClass = '.' + memberOf[i];
@@ -56,14 +56,14 @@ function hasWon(clicked) {
 	return false;
 }
 
-function contains(selector, text) {
+function contains(selector, text){
   var elements = document.querySelectorAll(selector);
   return [].filter.call(elements, function(element){
     return RegExp(text).test(element.textContent);
   });
 }
 
-function set(){
+function setBoard(){
 	if (this.innerHTML !== empty){
 		return;
 	}
