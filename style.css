@@ -1,0 +1,14 @@
+table{
+	border-collapse:collapse;
+}
+td{
+	background-color: blue;
+	border: 2px solid black;
+	font-size: 80px;
+	color: black;
+	border-radius: 0px;
+}
+td:hover{
+	background-color: crimson;
+    cursor:pointer;
+}
