@@ -2,13 +2,13 @@ table{
 	border-collapse:collapse;
 }
 td{
-	background-color: blue;
-	border: 2px solid black;
-	font-size: 80px;
+	background-color: #0047ba;
+	border: 3px solid #FFC82D;
+	font-size: 100px;
 	color: black;
 	border-radius: 0px;
 }
 td:hover{
-	background-color: crimson;
+	background-color: #E8000D;
     cursor:pointer;
 }
