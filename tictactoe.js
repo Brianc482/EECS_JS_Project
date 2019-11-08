@@ -15,16 +15,16 @@ function run(){
 		board.appendChild(row);
 		for (var j = 0; j < boardSize; j++) {
 			var cell = document.createElement('td');
-			cell.setAttribute('height', 150);
-			cell.setAttribute('width', 150);
+			cell.setAttribute('height', 175);
+			cell.setAttribute('width', 175);
 			cell.setAttribute('align', 'center');
 			cell.setAttribute('valign', 'center');
 			cell.classList.add('col' + j,'row' + i);
 			if (i == j) {
-				cell.classList.add('diagonal0');
+				cell.classList.add('diagonalOne');
 			}
 			if (j == boardSize - i - 1) {
-				cell.classList.add('diagonal1');
+				cell.classList.add('diagonalTwo');
 			}
 			cell.identifier = identifier;
 			cell.addEventListener("click", setBoard);
@@ -72,7 +72,6 @@ function setBoard(){
 		moves = moves + 1;
 		score[currentTurn] += this.identifier;
 	}	
-	
 	if(hasWon(this)){
 		document.getElementById('currentTurn').textContent = 'Current turn: Player ' + 1 + ' is X\'s';
 		if(currentTurn == "X"){
